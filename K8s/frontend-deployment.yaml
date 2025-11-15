@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fitness-frontend
+  labels:
+    app: fitness-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fitness-frontend
+  template:
+    metadata:
+      labels:
+        app: fitness-frontend
+    spec:
+      containers:
+      - name: fitness-frontend
+        image: h4meed/fitness-frontend:latest
+        ports:
+        - containerPort: 80
